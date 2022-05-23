@@ -1,2 +1,32 @@
--- Logging level set to
-Log entry types activated: ASPlumbing,DB.Connects
+MSAS Agent Starting Up -- Progress OpenEdge Release
+Logging level set to
+Log entry types activated:
+AS Starting MSAS Session for
+AS MSAS Session Startup
+MSAS Spawning New Worker Thread
+ASK Protocol is disabled
+Server Message state = 
+StateAware Session state = 
+css_conn() ret=
+cso4GL: Before loadProc
+Set open 4GL server state
+Incremented connection count for Medman
+TRACE: startup Procedure END SUCCESS
+Open4GLWriteLast
+Open4GLWrite
+Database Medman Options: useAppUserID
+User  Roles: SECUR_ADMIN AUDIT_ADMIN
+Connected to database
+AS calling css_conn()
+TRACE: cso4GL: After successful loadProc
+TRACE: cso4GL: In execProc()
+TRACE: PERSISTENT Procedure (Proxy 1)
+TRACE: cso4GL: After successful loadProc
+requestID= ROOT
+open4GLRead
+User Intergy Roles:
+AS connect requestID
+AS Application Server connected with connection id
+AS CSS_CONN before ACK, connection=
+cso4GL: In execCall() - execProc() success
+Non-PERSISTENT Procedure END SUCCESS
