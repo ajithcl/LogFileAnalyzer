@@ -1,0 +1,2 @@
+-- Logging level set to
+Log entry types activated: ASPlumbing,DB.Connects
