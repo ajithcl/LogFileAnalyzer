@@ -30,3 +30,8 @@ AS Application Server connected with connection id
 AS CSS_CONN before ACK, connection=
 cso4GL: In execCall() - execProc() success
 Non-PERSISTENT Procedure END SUCCESS
+connect Procedure END SUCCESS
+Internal Procedure (Proxy 59) END SUCCESS.
+TRACE: Internal Procedure (Proxy 1) END SUCCESS.
+Disconnecting from database Medman, user number
+AS Application Server disconnected with connection id: 

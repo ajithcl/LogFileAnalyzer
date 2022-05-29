@@ -42,14 +42,14 @@ class LogFile:
             for line_content in file_logfile:
                 self.process_lines(line_content=line_content)
 
-        self.export_to_file()
+        output_file_name = self.export_to_file()
 
         result = {'log_file_line_count': self.logfile_lines_total,
-                  'output_file_line_count': len(self._output_file_list)}
+                  'output_file_line_count': len(self._output_file_list),
+                  'output_file_name' : output_file_name}
         json_result = json.dumps(result)
 
         return json_result
-
 
     def process_lines(self, line_content):
         should_exclude = False
@@ -63,6 +63,8 @@ class LogFile:
             self._output_file_list.append(line_content)
 
     def export_to_file(self):
-        with open('output.txt', 'w') as output_file:
+        output_file_name = 'D:\\Ajith\\PythonProject\\LogFileAnalyzer\\output.txt'
+        with open(output_file_name, 'w') as output_file:
             for line in self._output_file_list:
                 output_file.write(line)
+        return output_file_name

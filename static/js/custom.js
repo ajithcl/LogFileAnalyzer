@@ -1,5 +1,6 @@
 $(document).ready(function(){
     var output_file = document.getElementById('output_file');
+
     $(document).on('change', '#output_file', function(e){
         var fr = new FileReader();
         fr.onload = function(){
@@ -41,6 +42,7 @@ $(document).ready(function(){
                             </tr>`
                     }
                     span_analysis_id.innerHTML = inner_html_text;
+                    output_file.hidden = false;
 
 
                 }else{
