@@ -1,4 +1,13 @@
 $(document).ready(function(){
+    var output_file = document.getElementById('output_file');
+    $(document).on('change', '#output_file', function(e){
+        var fr = new FileReader();
+        fr.onload = function(){
+            document.getElementById('output_id').textContent = fr.result;
+            }
+       fr.readAsText(output_file.files[0]);
+
+    })
 
     // Click event for Log file analyze button
     $(document).on('click', '#btn_log_analyze', function(e){
@@ -32,6 +41,7 @@ $(document).ready(function(){
                             </tr>`
                     }
                     span_analysis_id.innerHTML = inner_html_text;
+
 
                 }else{
                     // TODO : Error formatting required.
