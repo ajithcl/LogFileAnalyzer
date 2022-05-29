@@ -5,18 +5,38 @@ $(document).ready(function(){
         e.preventDefault();
 
         var log_file_name = document.getElementById('log_file_name').value;
+        var span_analysis_id = document.getElementById('span_analysis_result');
 
         if (log_file_name.length == 0){
             alert('Invalid log file name!');
             return;
         }
-        var form_data = $(this).serialize();
+        var form_data = {'log_file_name':log_file_name}
+
         $.ajax({
             url : '/analyze_log_file',
             type : 'POST',
             data : form_data,
             success : function(result){
-                alert('returned to JS');
+                json_result = JSON.parse(result);
+                result_value = json_result['result']
+                if (result_value == 'success'){
+                    console.log(json_result['data']);
+                    result_data = JSON.parse(json_result['data']);
+                    inner_html_text = '<table class="table table-striped">';
+                    for (var key in result_data){
+                        inner_html_text += `
+                            <tr>
+                            <td>${key}</td>
+                            <td>${result_data[key]}</td>
+                            </tr>`
+                    }
+                    span_analysis_id.innerHTML = inner_html_text;
+
+                }else{
+                    // TODO : Error formatting required.
+                    alert(json_result['data'])
+                }
             }
         });
     })

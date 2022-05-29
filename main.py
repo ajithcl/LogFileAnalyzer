@@ -2,8 +2,8 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-from ConfigurationSettings import ConfigurationSettings
-from FilterFile import FilterFileLoader
+from models.ConfigurationSettings import ConfigurationSettings
+from models.FilterFile import FilterFileLoader
 
 total_line_count = 0
 filter_contents_list = []

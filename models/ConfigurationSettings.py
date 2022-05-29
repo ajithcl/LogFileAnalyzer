@@ -2,12 +2,12 @@
 Takes care of the Configurations settings
 from the configuration ini file
 """
+from configparser import ConfigParser
 
 
 class ConfigurationSettings:
     def __init__(self):
         self._filter_file = ''
-        from configparser import ConfigParser
         config_parser = ConfigParser()
         try:
             config_parser.read('config.ini')
