@@ -2,7 +2,6 @@
 # Author : Ajith kumar CL
 # Notes  : Starting program for this web project.
 
-import requests
 import web
 import json
 from models.LogFile import LogFile
@@ -14,7 +13,7 @@ urls = ('/', 'Home',
 
 app = web.application(urls, globals())
 session = web.session.Session(app, web.session.DiskStore("sessions"))
-session_data = session.initializer
+# session_data = session.initializer
 render = web.template.render("views/templates", base="MainLayout")
 
 

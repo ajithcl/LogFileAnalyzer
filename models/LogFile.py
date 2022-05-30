@@ -44,6 +44,9 @@ class LogFile:
 
         output_file_name = self.export_to_file()
 
+        if output_file_name == None:
+            output_file_name = 'Unable to create output file.'
+
         result = {'log_file_line_count': self.logfile_lines_total,
                   'output_file_line_count': len(self._output_file_list),
                   'output_file_name' : output_file_name}
@@ -64,7 +67,12 @@ class LogFile:
 
     def export_to_file(self):
         output_file_name = 'D:\\Ajith\\PythonProject\\LogFileAnalyzer\\output.txt'
-        with open(output_file_name, 'w') as output_file:
-            for line in self._output_file_list:
-                output_file.write(line)
+        try:
+            with open(output_file_name, 'w') as output_file:
+                for line in self._output_file_list:
+                    output_file.write(line)
+        except FileNotFoundError:
+            return None
+
         return output_file_name
+        
